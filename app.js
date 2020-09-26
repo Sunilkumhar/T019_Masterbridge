@@ -25,15 +25,19 @@ app.use((req, res, next)=> {
     next(); 
 });*/
 
-const connectionString = 'mongodb+srv://Parth:'+process.env.DB_PASSWORD+'@cluster0.5b4sy.mongodb.net/'+process.env.DB_NAME+'?retryWrites=true&w=majority';
+const connectionString = 'mongodb+srv://Parth:'+process.env.DB_PASSWORD+'@cluster0.9b6gf.mongodb.net/'+process.env.DB_NAME+'?retryWrites=true&w=majority';
 mongoose.connect(connectionString,  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 .then(()=> console.log('Connected to database!'))
 .catch((err)=> console.log(err));
 
-const usersRoute = require('./api/routes/students');
+const studentsRoute = require('./api/routes/students');
+const teachersRoute = require('./api/routes/teachers');
+const coursesRoute = require('./api/routes/courses');
 
 //initialising routes
-app.use('/students', usersRoute);
+app.use('/students', studentsRoute);
+app.use('/teachers', teachersRoute);
+app.use('/courses', coursesRoute);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');

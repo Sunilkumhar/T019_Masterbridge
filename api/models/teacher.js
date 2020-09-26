@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const regexForEmailValidation = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 
-const studentSchema = mongoose.Schema({
+const teacherSchema = mongoose.Schema({
     userID: {
         type: String, 
         required: [true, "User ID required"],
@@ -24,16 +24,20 @@ const studentSchema = mongoose.Schema({
         type: String,
         required: [true, "Password required"]
     },
-    institution: {
-        type: String,
-        required: [true, "Institution required"]
+    experience: {
+        type: Number,
+        default: 0
+    },
+    specialization: {
+        type: [String],
+        required: [true, "Specialization required"]
     },
     bio: {
         type: String,
-        default: "Always learing!"
-    },
+        default: "Love teaching!"
+    }
     },
     {versionKey: false}
 );
 
-module.exports = mongoose.model('Student', studentSchema);
+module.exports = mongoose.model('Teacher', teacherSchema);
