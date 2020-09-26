@@ -4,11 +4,12 @@ const morgan = require('morgan');   //to log incoming requests
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+app.use('/uploadVideos', express.static('uploads'));
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-/*const supportedRequests = ['GET', 'PUT', 'POST', 'DELETE', 'PATCH'].join(", ");    //HTTPS requests we wanna allow for our API
+const supportedRequests = ['GET', 'PUT', 'POST', 'DELETE', 'PATCH'].join(", ");    //HTTPS requests we wanna allow for our API
 //putting cors headers to prevent cors errors
 app.use((req, res, next)=> {
     res.header('Access-Control-Allow-Origin', '*');
@@ -23,7 +24,7 @@ app.use((req, res, next)=> {
     }
     //if we don't receive OPTIONS, continue to other requests
     next(); 
-});*/
+});
 
 const connectionString = 'mongodb+srv://Parth:'+process.env.DB_PASSWORD+'@cluster0.9b6gf.mongodb.net/'+process.env.DB_NAME+'?retryWrites=true&w=majority';
 mongoose.connect(connectionString,  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })

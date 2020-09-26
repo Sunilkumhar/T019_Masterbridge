@@ -52,3 +52,15 @@ exports.createTeacher = (req, res, next)=> {
         res.status(500).json({error: err});
     });
 }
+
+exports.uploadVideos = (req, res, next)=> {
+    try {
+        return res.status(201).json({
+            message: 'Files uploded successfully'
+        });
+    }
+    catch (error) {
+        console.error(error);
+        res.status(500).json({error: error});
+    }
+}
