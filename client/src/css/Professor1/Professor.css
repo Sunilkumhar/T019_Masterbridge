@@ -1,0 +1,14 @@
+.professorinfo .mycoursees {
+  margin-top: 20px;
+  margin-left: 30px;
+  text-decoration: underline;
+}
+.professorinfo .mycourse {
+  width: 90%;
+  margin: auto;
+}
+
+.professorinfo .totalstd {
+  width: 90%;
+  margin: auto;
+}

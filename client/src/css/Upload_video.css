@@ -1,0 +1,37 @@
+.uploadv .container1 {
+  width: 50%;
+  margin: auto;
+  margin-top: 1%;
+  padding: 2%;
+  background: rgb(231, 226, 226);
+}
+.uploadv .container1 .row1 {
+  display: flex;
+}
+.uploadv .container1 .row1 .name {
+  width: 65%;
+  margin-right: 8%;
+}
+
+.uploadv .container1 .row1 .exp {
+  width: 10%;
+}
+
+.uploadv .container1 .bio {
+  width: 80%;
+}
+.uploadv .container1 .numberof {
+  width: 100%;
+}
+.uploadv .container1 .numberof .videos {
+  display: flex;
+}
+.uploadv .container1 .numberof .addvideo {
+  background-color: rgb(217, 243, 188);
+  color: black;
+  margin-left: 1%;
+}
+
+.uploadv .container1 #proceed {
+  width: 30%;
+}

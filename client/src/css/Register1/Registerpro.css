@@ -1,0 +1,42 @@
+.register .container1 {
+  width: 50%;
+  margin: auto;
+  margin-top: 1%;
+  padding: 2%;
+  background: rgb(231, 226, 226);
+}
+.register .container1 .row1 {
+  display: flex;
+}
+.register .container1 .row1 .name {
+  width: 53%;
+  margin-right: 8%;
+}
+.register .container1 .row1 .userid {
+  width: 30%;
+}
+.register .container1 .row1 .email {
+  width: 53%;
+  margin-right: 8%;
+}
+.register .container1 .row1 .phone {
+  width: 30%;
+}
+.register .container1 .pass {
+  width: 55%;
+  margin-right: 5%;
+}
+.register .container1 .row1 .exp {
+  width: 10%;
+}
+
+.register .container1 .cpass {
+  width: 60%;
+}
+.register .container1 .bio {
+  width: 80%;
+}
+
+.register .container1 #proceed {
+  width: 30%;
+}
