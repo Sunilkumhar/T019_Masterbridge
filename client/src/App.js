@@ -53,9 +53,7 @@ function App() {
           <Route exact path="/professor/upload">
             <Upload_video />
           </Route>
-          {/* <Route exact path="/Professor/student_info">
-            <Student_Analysis />
-          </Route> */}
+
           <Route exact path="/">
             <All_course />
           </Route>

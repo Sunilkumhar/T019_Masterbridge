@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../css/Professor1/Professor.css";
 import Mycourse from "./Mycourse.js";
 import Stdtable from "./Stdtable.js";
@@ -51,6 +52,14 @@ function Professor() {
                 </h3>
               </div>
             </div>
+            <Link to="/professor/upload" style={{ textDecoration: "none" }}>
+              <input
+                type="submit"
+                value="Upload Course"
+                id="proceed"
+                class="btn"
+              />
+            </Link>
           </div>
         </div>
       </div>
