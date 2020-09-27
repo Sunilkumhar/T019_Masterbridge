@@ -64,3 +64,56 @@ exports.uploadVideos = (req, res, next)=> {
         res.status(500).json({error: error});
     }
 }
+
+//Route: teachers/login
+exports.login = (req, res, next)=> {
+    //User can log in using either email or userID
+    let qry = {};
+    if (req.body.hasOwnProperty('userID'))
+        qry['userID'] = req.body.userID;
+    else if (req.body.hasOwnProperty('email'))
+        qry['email'] = req.body.email;
+    else 
+        return res.status(400).json({message: "Email or UserID was not provided"});
+
+    if (req.body.hasOwnProperty('password')==false)
+        return res.status(400).json({message: "Password was not provided"});
+    
+    Teacher.find(qry).exec()
+    .then(user=> {
+        if (user.length < 1) {
+            return res.status(401).json({message: "Authorization failed"}); //do not indicate that user doesn't exist for security reasons
+        }
+        bcrypt.compare(req.body.password, user[0].password)
+        .then(result=> {
+            if (result) {
+                const token = jwt.sign(
+                    {   //payload of token
+                        userID: user[0].userID,
+                        email: user[0].email,
+                        accountType: "teacher"
+                    },
+                    process.env.JWT_KEY,
+                    {
+                        expiresIn: "1h"
+                    }
+                );
+
+                return res.status(200).json({
+                    message: "Authorization successful",
+                    token: token
+                });
+            }
+            else {
+                return res.status(401).json({message: "Authorization failed"});
+            }
+        })
+        .catch(err=> {
+            res.status(401).json({message: "Authorization failed"});
+        });
+    })
+    .catch(err=> {
+        console.log(err);
+        res.status(500).json({error: err});
+    });
+}

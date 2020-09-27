@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb)=> {
-    if (file.mimetpye == 'video/mp4')
+    if (file.mimetype == 'video/mp4')
         cb(null, true);
     else 
         cb(null, false);
@@ -25,6 +25,7 @@ const fileFilter = (req, file, cb)=> {
 const upload = multer({storage: storage, fileFilter: fileFilter});
 
 const TeachersController = require('../controllers/teachers');
+const checkAuthTeacher = require('../middleware/check-auth-teacher');
 
 router.get('/', (req, res, next)=> {
     res.status(200).json({message: 'Handling GET requests to /teachers'});
@@ -32,6 +33,8 @@ router.get('/', (req, res, next)=> {
 
 router.post('/signup', TeachersController.createTeacher);
 
-router.post('/uploadVideos', upload.array('videos', numVideosUploadLimit), TeachersController.uploadVideos);    //'video' is the ID in form data
+router.post('/:userID/upload', checkAuthTeacher, upload.array('videos', numVideosUploadLimit), TeachersController.uploadVideos);    //'videos' is the ID in form data
+
+router.post('/login', TeachersController.login);
 
 module.exports = router;
