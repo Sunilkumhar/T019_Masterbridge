@@ -30,3 +30,14 @@
 .title:nth-child(even) {
   background: #ebe8e8;
 }
+.each_course .quiz {
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.each_course .quiz .quizes {
+  margin-top: 1%;
+}
+.each_course .quiz .quizes button {
+  margin: 1%;
+}

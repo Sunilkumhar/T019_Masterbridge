@@ -2,12 +2,14 @@ import React from "react";
 import "../../css/Student1/Student.css";
 import Coursecomplete from "./Coursecomplete";
 import Quiz from "./Quiz";
+import NavS from "./NavS.js";
 import user from "../../images/user.png";
 import Piechart from "./Piechart";
 
 function Student() {
   return (
     <div className="studentinfo">
+      <NavS />
       <div className="student">
         <div className="stdinfo">
           <div className="infoleft">

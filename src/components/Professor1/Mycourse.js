@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function mYCOURSE() {
+function Mycourse() {
   return (
     <div className="completedcourse">
       <div className="flip-card">
@@ -26,4 +26,4 @@ function mYCOURSE() {
   );
 }
 
-export default mYCOURSE;
+export default Mycourse;

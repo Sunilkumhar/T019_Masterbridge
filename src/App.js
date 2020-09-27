@@ -8,6 +8,7 @@ import Professor from "./components/Professor1/Professor";
 import Student_Analysis from "./components/Student_Analysis";
 import All_course from "./components/All/All_course";
 import Upload_video from "./components/Upload_video";
+import Quiz from "./components/Quiz1/Quiz";
 import Perticular_course from "./components/Perticular/Perticular_course";
 import "./App.css";
 
@@ -25,8 +26,11 @@ function App() {
           <Route exact path="/registerpro">
             <Registerpro />
           </Route>
-          <Route path="/course1">
+          <Route exact path="/course1">
             <Perticular_course />
+          </Route>
+          <Route exact path="/course1/quiz">
+            <Quiz />
           </Route>
           <Route path="/student">
             <Student />
@@ -37,9 +41,9 @@ function App() {
           <Route exact path="/professor/upload">
             <Upload_video />
           </Route>
-          <Route exact path="/Professor/student_info">
+          {/* <Route exact path="/Professor/student_info">
             <Student_Analysis />
-          </Route>
+          </Route> */}
           <Route exact path="/">
             <All_course />
           </Route>

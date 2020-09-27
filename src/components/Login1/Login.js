@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "../../css/Login1/Login.css";
+import axios from "axios";
 import loginside from "../../images/loginside.jpg";
 
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
         <img src={loginside} alt="loginside" />
       </div>
       <div className="col-4">
-        <div class="container1 animate__animated animate__zoomIn ">
+        <div class="container1  ">
           <div class="row">
             <div class="col-md-6 mx-auto">
               <h1

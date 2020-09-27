@@ -2,11 +2,14 @@ import React from "react";
 import "../../css/Professor1/Professor.css";
 import Mycourse from "./Mycourse.js";
 import Stdtable from "./Stdtable.js";
+import NavS from "../Student1/NavS.js";
 import user from "../../images/user.png";
 
 function Professor() {
   return (
     <div className="professorinfo">
+      <NavS />
+
       <div className="student">
         <div className="stdinfo">
           <div className="infoleft">

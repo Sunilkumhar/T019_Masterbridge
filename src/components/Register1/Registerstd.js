@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "react-dropdown/style.css";
 import "../../css/Register1/Registerstd.css";
 
 function Register() {
+  // axios
+  //   .post("http://localhost:5000/users/add", user)
+  //   .then((res) => console.log(res.data));
+
   return (
     <div className="register">
       <div class="container1">

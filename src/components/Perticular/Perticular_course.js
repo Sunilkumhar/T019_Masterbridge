@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../../css/Perticular/Perticular_course.css";
+import NavP from "./NavP";
+
 import ReactPlayer from "react-player";
 
 function Perticular_course() {
   const [Url, setUrl] = useState("https://www.youtube.com/watch?v=ysz5S6PUM-U");
+  const [disable, setdisable] = useState("disabled");
 
   var tit = [
     { intro: "Intro", link: "https://www.youtube.com/watch?v=pCA4qpQDZD8" },
@@ -25,6 +29,7 @@ function Perticular_course() {
   ];
 
   var sum = 1;
+  const disabled = false;
 
   useEffect(() => {
     Showvideo();
@@ -42,6 +47,7 @@ function Perticular_course() {
 
   return (
     <div className="each_course">
+      <NavP />
       <div className="row">
         <div className="col-8 video">
           <div className="wrapper">{Showvideo()}</div>
@@ -61,6 +67,27 @@ function Perticular_course() {
       </div>
       <div className="quiz">
         <h1>Here are the Quizes For the above course : </h1>
+        <div className="quizes">
+          <Link
+            to="/course1/quiz"
+            style={{ textDecoration: "none" }}
+            custom-attribute="disabled"
+          >
+            <button type="button" class="btn btn-primary">
+              Quiz 1
+            </button>
+          </Link>
+          <Link to="/course1/quiz" style={{ textDecoration: "none" }}>
+            <button type="button" class="btn btn-primary">
+              Quiz 2
+            </button>
+          </Link>
+          <Link to="/course1/quiz" style={{ textDecoration: "none" }}>
+            <button type="button" class="btn btn-primary">
+              Quiz 3
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
