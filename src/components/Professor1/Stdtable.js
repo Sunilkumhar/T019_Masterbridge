@@ -7,6 +7,7 @@ function Quiz() {
     <div className="quiztable">
       <table>
         <tr>
+          <th>Name</th>
           <th>Course Name</th>
           <th>Quiz Number</th>
           <th>Marks Obtained</th>
@@ -14,6 +15,7 @@ function Quiz() {
           <th>Student Profile</th>
         </tr>
         <tr>
+          <td>Sunil</td>
           <td>Node js</td>
           <td>1</td>
           <td>10</td>
@@ -25,6 +27,7 @@ function Quiz() {
           </Link>
         </tr>
         <tr>
+          <td>Parth</td>
           <td>Node js</td>
           <td>2</td>
           <td>10</td>
@@ -36,6 +39,8 @@ function Quiz() {
           </Link>
         </tr>
         <tr>
+          <td>Milan</td>
+
           <td>Node js</td>
           <td>3</td>
           <td>10</td>
@@ -48,6 +53,8 @@ function Quiz() {
           </Link>
         </tr>
         <tr>
+          <td>Parth</td>
+
           <td>Node js</td>
           <td>4</td>
           <td>10</td>
@@ -59,6 +66,8 @@ function Quiz() {
           </Link>
         </tr>
         <tr>
+          <td>Sunil</td>
+
           <td>Node js</td>
           <td>5</td>
           <td>10</td>

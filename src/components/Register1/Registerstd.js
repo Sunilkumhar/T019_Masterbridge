@@ -107,7 +107,7 @@ function Register() {
               placeholder="Enter Your Message"
             ></textarea>
           </div>
-          <Link to="/login" style={{ textDecoration: "none" }}>
+          <Link to="/loginstd" style={{ textDecoration: "none" }}>
             <input
               type="submit"
               value="Register as Student"

@@ -101,7 +101,7 @@ function Register() {
               placeholder="Enter Your Message"
             ></textarea>
           </div>
-          <Link to="/login" style={{ textDecoration: "none" }}>
+          <Link to="/loginpro" style={{ textDecoration: "none" }}>
             <input
               type="submit"
               value="Register as Professor"

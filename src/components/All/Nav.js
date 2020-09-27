@@ -10,22 +10,25 @@ function Nav() {
           OnlineLearning
         </a>
         <div className="btn  my-2 my-sm-0">
-          <Link to="/login" style={{ textDecoration: "none" }}>
-            <button class="btn btn-outline-primary mr-3">Sign-In</button>
+          <Link to="/loginas" style={{ textDecoration: "none" }}>
+            <button class="btn btn-outline-primary mr-3">Log-In</button>
           </Link>
+          {/* <Link to="/loginpro" style={{ textDecoration: "none" }}>
+            <button class="btn btn-outline-primary mr-3">
+              Log-In For Professor
+            </button>
+          </Link> */}
           <Link
-            to="/registerstd"
+            to="/registeras"
             style={{ textDecoration: "none", marginRight: "10px" }}
           >
-            <button className="btn btn-outline-primary">
-              Sign-Up For Student
-            </button>
+            <button className="btn btn-outline-primary">Sign-Up</button>
           </Link>
-          <Link to="/registerpro" style={{ textDecoration: "none" }}>
+          {/* <Link to="/registerpro" style={{ textDecoration: "none" }}>
             <button className="btn btn-outline-primary">
-              Sign-Up For Professor
+              Sign-Up As Professor
             </button>
-          </Link>
+          </Link> */}
         </div>
       </nav>
     </div>

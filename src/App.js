@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login1/Login";
+import Loginpro from "./components/Login1/Loginpro";
+import LoginAs from "./components/Login1/LoginAs";
+import Registeras from "./components/Register1/Registeras";
 import Registerstd from "./components/Register1/Registerstd";
 import Registerpro from "./components/Register1/Registerpro";
 import Student from "./components/Student1/Student";
@@ -17,8 +20,17 @@ function App() {
     <div className="home1">
       <Router>
         <Switch>
-          <Route path="/login">
+          <Route exact path="/loginas">
+            <LoginAs />
+          </Route>
+          <Route exact path="/Registeras">
+            <Registeras />
+          </Route>
+          <Route exact path="/loginstd">
             <Login />
+          </Route>
+          <Route exact path="/loginpro">
+            <Loginpro />
           </Route>
           <Route exact path="/registerstd">
             <Registerstd />

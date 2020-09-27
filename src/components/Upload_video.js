@@ -21,7 +21,6 @@ function Upload_video() {
       return (
         <div className="row1">
           <div className="form-group name ">
-            {/* <label>Topic Name*</label> */}
             <input
               type="text"
               className="form-control "
@@ -79,7 +78,6 @@ function Upload_video() {
             </label>
             <div className="row1">
               <div className="form-group name ">
-                {/* <label>Topic Name*</label> */}
                 <input
                   type="text"
                   className="form-control "
