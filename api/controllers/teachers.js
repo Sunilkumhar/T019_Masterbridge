@@ -24,7 +24,7 @@ exports.createTeacher = (req, res, next)=> {
                 return res.status(409).json({message: "Email ID taken"});
             }
             let obj = JSON.parse(JSON.stringify(req.body));    //copying body elements
-            obj.specialization = obj.specialization.split(",");     //FRONT END HANLDED COMMA INPUT
+            obj.specialization = obj.specialization.split(',');     //FRONT END HANDLED COMMA INPUT
             //hash the password
             bcrypt.hash(obj['password'], saltAmount)
             .then(hash=> {
