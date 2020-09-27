@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../css/Register1/Registerpro.css";
 
 function Register() {
+  const [name, setname] = useState("");
+
+  const handleChange = (event) => {
+    setname({ name: event.target.value });
+    console.log(name);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const user = {
+      name,
+    };
+
+    axios.post(`http://localhost/teachers/signup`, { user }).then((res) => {
+      console.log(res);
+      console.log(res.data);
+    });
+  };
+
   return (
     <div className="register">
       <div class="container1">
@@ -23,6 +44,7 @@ function Register() {
                 id="name"
                 placeholder="Name"
                 required
+                onClick={handleChange}
               />
             </div>
             <div class="form-group userid">
@@ -30,7 +52,7 @@ function Register() {
               <input
                 type="text"
                 class="form-control"
-                id="name"
+                id="userID"
                 placeholder="Name"
                 required
               />
@@ -64,13 +86,13 @@ function Register() {
               <input
                 type="text"
                 class="form-control"
-                id="pass"
+                id="password"
                 placeholder="Password"
                 required
               />
             </div>
             <div class="form-group exp">
-              <label>Experience*</label>
+              <label>experience*</label>
               <input
                 type="number"
                 class="form-control"
@@ -87,6 +109,21 @@ function Register() {
               class="form-control"
               id="pass1"
               placeholder="Confirm Password"
+              required
+            />
+          </div>
+          <div class="form-group pass">
+            <div className="specialization" style={{ display: "flex" }}>
+              <label>Specialization* </label>
+              <p style={{ paddingTop: "10px" }}>
+                (Enter comma seprated values)
+              </p>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="specialization"
+              placeholder="Specialization"
               required
             />
           </div>
