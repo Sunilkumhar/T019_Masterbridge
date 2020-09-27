@@ -1,9 +1,10 @@
-const express = require('express');
+const express = require("express");
 
-if (process.env.NODE_ENV !== 'production')  //if still in dev stage, use the env variables
-    require('dotenv').config();
+if (process.env.NODE_ENV !== "production")
+  //if still in dev stage, use the env variables
+  require("dotenv").config();
 
-const app = require('./app');
+const app = require("./app");
 const port = process.env.PORT || 3000;
 
 const server = express();

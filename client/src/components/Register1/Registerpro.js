@@ -13,15 +13,18 @@ function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(123);
 
     const user = {
       name,
     };
 
-    axios.post(`http://localhost/teachers/signup`, { user }).then((res) => {
-      console.log(res);
-      console.log(res.data);
-    });
+    axios
+      .post(`http://localhost:4000/teachers/signup`, { user })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
   };
 
   return (
@@ -34,7 +37,7 @@ function Register() {
         >
           Please Enter All the Details :{" "}
         </h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row1">
             <div class="form-group name">
               <label>Name*</label>
