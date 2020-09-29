@@ -5,26 +5,56 @@ import "../../css/Register1/Registerpro.css";
 
 function Register() {
   const [name, setname] = useState("");
+  const [email, setemail] = useState("");
+  const [userID, setuserID] = useState("");
+  const [password, setpassword] = useState("");
+  const [experience, setexperience] = useState();
+  const [specialization, setspecialization] = useState("");
+  // const [todos, settodos] = useState([]);
 
-  const handleChange = (event) => {
-    setname({ name: event.target.value });
-    console.log(name);
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/todos")
+  //     .then((response) => response.json())
+  //     .then((json) => settodos(json));
+  // }, []);
+
+  const handleChangeName = (e) => {
+    setname({ name: e.target.value });
+  };
+  const handleChangeuserID = (e) => {
+    setuserID({ userID: e.target.value });
+  };
+  const handleChangeEmail = (e) => {
+    setemail({ email: e.target.value });
+  };
+  const handleChangePass = (e) => {
+    setpassword({ password: e.target.value });
+  };
+  const handleChangeExp = (e) => {
+    setexperience({ experience: e.target.value });
+  };
+  const handleChangeSpeci = (e) => {
+    setspecialization({ specialization: e.target.value });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(123);
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const user = {
+      userID,
+      email,
+      password,
+      experience,
       name,
+      specialization,
     };
 
-    axios
-      .post(`http://localhost:4000/teachers/signup`, { user })
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-      });
+    console.log(user);
+
+    axios.post("http://localhost:4000/teachers/signup", user).then((res) => {
+      console.log(res);
+    });
+
+    window.location = "/loginpro";
   };
 
   return (
@@ -47,10 +77,10 @@ function Register() {
                 id="name"
                 placeholder="Name"
                 required
-                onClick={handleChange}
+                onChange={handleChangeName}
               />
             </div>
-            <div class="form-group userid">
+            <div class="form-group userID">
               <label>User Id*</label>
               <input
                 type="text"
@@ -58,6 +88,7 @@ function Register() {
                 id="userID"
                 placeholder="Name"
                 required
+                onChange={handleChangeuserID}
               />
             </div>
           </div>
@@ -70,6 +101,7 @@ function Register() {
                 id="email"
                 placeholder="Email"
                 required
+                onChange={handleChangeEmail}
               />
             </div>
             <div class="form-group phone">
@@ -80,6 +112,7 @@ function Register() {
                 id="phone"
                 placeholder="Phone Number"
                 required
+                // onChange  ={handleChange}
               />
             </div>
           </div>
@@ -92,6 +125,7 @@ function Register() {
                 id="password"
                 placeholder="Password"
                 required
+                onChange={handleChangePass}
               />
             </div>
             <div class="form-group exp">
@@ -102,6 +136,7 @@ function Register() {
                 id="exp"
                 placeholder="Zero"
                 required
+                onChange={handleChangeExp}
               />
             </div>
           </div>
@@ -113,6 +148,7 @@ function Register() {
               id="pass1"
               placeholder="Confirm Password"
               required
+              // onChange  ={handleChange}
             />
           </div>
           <div class="form-group pass">
@@ -128,6 +164,7 @@ function Register() {
               id="specialization"
               placeholder="Specialization"
               required
+              onChange={handleChangeSpeci}
             />
           </div>
 
@@ -139,16 +176,17 @@ function Register() {
               cols="30"
               id="Bio"
               placeholder="Enter Your Message"
+              // onChange  ={handleChangeBio}
             ></textarea>
           </div>
-          <Link to="/loginpro" style={{ textDecoration: "none" }}>
-            <input
-              type="submit"
-              value="Register as Professor"
-              id="proceed"
-              class="btn"
-            />
-          </Link>
+          {/* <Link to="/loginpro" style={{ textDecoration: "none" }}> */}
+          <input
+            type="submit"
+            value="Register as Professor"
+            id="proceed"
+            class="btn"
+          />
+          {/* </Link> */}
         </form>
       </div>
     </div>

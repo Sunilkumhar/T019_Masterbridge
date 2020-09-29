@@ -1,39 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../css/Upload_video.css";
+import Student_Analysis from "./Student_Analysis";
 
 function Upload_video() {
   const [addmore, setaddmore] = useState(0);
+  const [addvideo, setaddvideo] = useState([]);
 
-  useEffect(() => {
-    myContent();
-    console.log(123);
-  }, [addmore]);
+  // useEffect(() => {
+  //   myContent();
+  //   console.log(123);
+  // }, [addmore]);
 
   const addmore1 = () => {
-    var x = addmore + 1;
-    setaddmore(x);
-    console.log(addmore);
+    setaddvideo([...addvideo, <Student_Analysis />]);
+
+    // var x = addmore + 1;
+    // setaddmore(x);
+    // console.log(addmore);
   };
 
-  const myContent = () => {
-    if (addmore > 0) {
-      return (
-        <div className="row1">
-          <div className="form-group name ">
-            <input
-              type="text"
-              className="form-control "
-              id="name"
-              placeholder="Topic Name"
-              required
-            />
-            <input type="file" id="myfile" name="filename"></input>
-          </div>
-        </div>
-      );
-    }
-  };
+  // const myContent = () => {
+  //   if (addmore > 0) {
+  //     setaddvideo([...addvideo, <Student_Analysis />]);
+  //   }
+  // };
 
   return (
     <div className="uploadv">
@@ -88,16 +79,16 @@ function Upload_video() {
                 <input type="file" id="myfile" name="filename"></input>
               </div>
             </div>
-            {myContent()}
+            {addvideo}
             <button type="button" className="addvideo btn " onClick={addmore1}>
               Add More
             </button>
           </div>
 
-          <Link to="/login" style={{ textDecoration: "none" }}>
+          <Link to="/professor" style={{ textDecoration: "none" }}>
             <input
               type="submit"
-              value="Register as Professor"
+              value="Upload Video"
               id="proceed"
               className="btn"
             />
